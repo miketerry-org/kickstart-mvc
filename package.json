@@ -5,17 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=PROD node index.js",
-    "dev": "NODE_ENV=DEV node --watch . --env-file=.env index.js",
-    "dev-silent": "NODE_ENV=DEV-SILENT node --watch . --env-file=.env index.js",
+    "dev": "NODE_ENV=DEV node --watch . --env-file=assets/.env index.js",
+    "dev-silent": "NODE_ENV=DEV-SILENT node --watch . --env-file=assets/.env index.js",
     "test": "jest --watch --detectOpenHandles",
-    "generate": "topsecret generate --key-file ./assets/encrypt.key",
-    "encrypt": "topsecret encrypt ./assets/server.json config-server.secure --key-file ./assets/encrypt.key && topsecret encrypt ./assets/tenants.json config-tenants.secure --key-file ./assets/encrypt.key",
-    "decrypt": "topsecret decrypt ./config-server.secure ./.config/server-decrypted.json --key-file ./.config/encrypt.key && topsecret decrypt ./config-tenants.secure ./.config/tenants-decrypted.json --key-file ./.config/encrypt.key"
+    "generate": "topsecret generate --key-file assets/config/encrypt.key",
+    "encrypt": "topsecret encrypt assets/config/server.json assets/config/server.secure --key-file assets/config/encrypt.key && topsecret encrypt assets/config/tenants.json assets/config/tenants.secure --key-file assets/config/encrypt.key",
+    "decrypt": "topsecret decrypt assets/config/server.secure assets/config/server-decrypted.json --key-file assets/config/encrypt.key && topsecret decrypt assets/config/tenants.secure assets/config/tenants-decrypted.json --key-file assets/config/encrypt.key"
   },
   "dependencies": {
     "agenda": "^5.0.0",
     "compression": "^1.7.5",
     "confirm-env": "^1.0.1",
+    "confirm-json": "^2.0.3",
     "connect-mongodb-session": "^5.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

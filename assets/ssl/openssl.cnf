@@ -1,6 +1,6 @@
 [ req ]
 default_bits        = 2048
-default_keyfile     = web-starter.key
+default_keyfile     = kickstart-mvc.key
 distinguished_name  = req_distinguished_name
 x509_extensions     = v3_req
 prompt              = no
@@ -9,14 +9,14 @@ prompt              = no
 C = US
 ST = California
 L = San Francisco
-O = Web Starter
+O = kickstart mvc
 OU = Development
-CN = www.web-starter
+CN = www.kickstart-mvc
 
 [ v3_req ]
 subjectAltName = @alt_names
 
 [ alt_names ]
-DNS.1 = www.web-starter
-DNS.2 = alpha.web-starter
-DNS.3 = beta.web-starter
+DNS.1 = www.kickstart-mvc
+DNS.2 = alpha.kickstart-mvc
+DNS.3 = beta.kickstart-mvc
