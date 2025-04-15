@@ -1,0 +1,22 @@
+[ req ]
+default_bits        = 2048
+default_keyfile     = web-starter.key
+distinguished_name  = req_distinguished_name
+x509_extensions     = v3_req
+prompt              = no
+
+[ req_distinguished_name ]
+C = US
+ST = California
+L = San Francisco
+O = Web Starter
+OU = Development
+CN = www.web-starter
+
+[ v3_req ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = www.web-starter
+DNS.2 = alpha.web-starter
+DNS.3 = beta.web-starter

@@ -1,0 +1,128 @@
+/* Google Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
+
+/* Base Styles */
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+
+.header .navbar-link {
+  font-size: 1rem; /* Smaller size for navbar items */
+  font-weight: 500;
+  color: var(--navbar-link-color);
+  transition: color 0.2s;
+}
+
+.header .navbar-link:hover {
+  color: var(--navbar-link-hover-color);
+}
+
+.header .login-logout-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem; /* Slightly larger than navbar items */
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px; /* Pill shape */
+  text-align: center;
+  color: white;
+  background-color: var(--login-logout-bg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header .login-logout-link:hover {
+  background-color: var(--login-logout-bg-hover);
+}
+
+/* Centered h1 and h2 in Header */
+.header h1 {
+  font-size: 2.25rem; /* Big size for title */
+  font-weight: 700;
+}
+
+.header h2 {
+  font-size: 1.125rem; /* Smaller than h1 */
+  color: var(--header-slogan-color);
+  font-weight: 400;
+}
+
+/* Main Content Styles */
+.main {
+  padding: 2rem 1rem;
+}
+
+.main h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.main h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--main-slogan-color);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1rem 0;
+}
+
+.footer p {
+  font-size: 0.875rem;
+  color: var(--footer-text);
+  font-weight: 400;
+}
+
+/* Dark Mode Variables */
+:root {
+  --header-bg: #1a202c;
+  --header-text: #f7fafc;
+  --navbar-link-color: #edf2f7;
+  --navbar-link-hover-color: #63b3ed;
+  --login-logout-bg: #2b6cb0;
+  --login-logout-bg-hover: #3182ce;
+  --header-slogan-color: #e2e8f0;
+  --main-slogan-color: #e2e8f0;
+  --footer-bg: #2d3748;
+  --footer-text: #cbd5e0;
+}
+
+/* Light Mode Variables */
+@media (prefers-color-scheme: light) {
+  :root {
+    --header-bg: #f7fafc;
+    --header-text: #2d3748;
+    --navbar-link-color: #2d3748;
+    --navbar-link-hover-color: #2b6cb0;
+    --login-logout-bg: #2b6cb0;
+    --login-logout-bg-hover: #3182ce;
+    --header-slogan-color: #4a5568;
+    --main-slogan-color: #4a5568;
+    --footer-bg: #edf2f7;
+    --footer-text: #4a5568;
+  }
+}
+
+/* Smooth Transition for Dark/Light Mode */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f7fafc;
+    color: #2d3748;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a202c;
+    color: #f7fafc;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "port": 8080,
+  "db_url": "mongodb://local.mongodb/node-01",
+  "log_collection_name": "logs",
+  "log_expiration_days": 1,
+  "log_capped": true,
+  "log_max_size": 10,
+  "log_max_docs": 10000,
+  "session_collection_name": "sessions",
+  "session_secret": "c742fc1277b384bb698210ffb9032287c625751804f5f66985877f9e79e00a61",
+  "session_timeout": 30,
+  "rate_limit_minutes": 10,
+  "rate_limit_requests": 200,
+  "path_static": "assets/public",
+  "path_views": "assets/views",
+  "path_views_layouts": "assets/views",
+  "path_views_partials": "assets/views",
+  "path_views_default_layout": "layout"
+}

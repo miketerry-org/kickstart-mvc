@@ -1,0 +1,47 @@
+<!-- Header -->
+<header class="header py-6 px-4">
+  <div
+    class="container mx-auto flex flex-col md:flex-row items-center justify-between md:justify-between"
+  >
+    <!-- Left Block: Logo and Navbar -->
+    <div class="left-block flex flex-col items-center md:items-start">
+      <!-- Logo -->
+      <div class="logo mb-4 md:mb-0">
+        <img src="logo.svg" alt="Mike Terry Logo" class="w-16 h-16" />
+        <!-- Replace with actual logo path -->
+      </div>
+
+{{>navbar}}
+
+    </div>
+
+    <!-- Middle Block: Project Title and Slogan -->
+    <div class="middle-block text-center md:text-center">
+      <h1 class="text-3xl font-bold">{{site_title}}</h1>
+      <h2 class="text-xl text-gray-600">{{site_slogan}}</h2>
+    </div>
+
+    <!-- Right Block: sign in/Lsign out (conditionally rendered) -->
+    <div class="right-block mt-4 md:mt-0 md:ml-auto flex items-center">
+      {{#if is_signed_in }}
+      <!-- sign out Link -->
+      <a
+        href="/sign-out"
+        class="login-logout-link bg-blue-500 text-white rounded-full px-6 py-2 text-lg hover:bg-blue-600"
+  hx-get="/sign-out"
+        hx-target="#main"
+              >Sign Out</a
+      >
+      {{else}}
+      <!-- sign in Link -->
+      <a
+        href="/sign-in"
+        class="login-logout-link bg-blue-500 text-white rounded-full px-6 py-2 text-lg hover:bg-blue-600"
+  hx-get="/sign-in"
+        hx-target="#main"
+              >Sign In</a
+      >
+      {{/if}}
+    </div>
+  </div>
+</header>

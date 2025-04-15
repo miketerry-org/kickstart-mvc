@@ -1,0 +1,43 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800">
+  <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Sign In - Step 1: Enter Your Email</h3>
+    <p class="mb-4 text-gray-700 dark:text-gray-300">To begin the sign-in process, please enter your email address below. We will send you an email with instructions and a link to complete your sign-in process. Please ensure the email address is valid so you can receive the instructions.</p>
+
+    <!-- Form to Enter Email with HX-POST -->
+    <form hx-post="/sign-in" hx-target="main" hx-swap="innerHTML">
+      <label for="email" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Enter your email address:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-400"
+        placeholder="you@example.com"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zAZ]{2,}$"
+        title="Please enter a valid email address"
+        aria-live="polite"
+      />
+
+      <!-- Information on the Email Process -->
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">A valid email address is required to proceed. Once submitted, we will send you a verification email with further instructions. Please check your inbox (and spam/junk folder) for the email.</p>
+
+      <!-- Buttons placed side by side -->
+      <div class="flex gap-4">
+        <button
+          type="submit"
+          class="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+        >Send Email</button>
+        <button
+          type="button"
+          hx-get="/"
+          hx-target="main"
+          hx-swap="innerHTML"
+          class="w-full py-2 px-4 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+        >Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{{> content-end }}
+

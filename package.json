@@ -1,0 +1,76 @@
+{
+  "name": "kickstart-mvc",
+  "version": "0.0.1",
+  "description": "Kickstart your next MVC web app fast with Express, Handlebars, and MongoDB. Fully customizable and ready to deploy.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=PROD node index.js",
+    "dev": "NODE_ENV=DEV node --watch . --env-file=.env index.js",
+    "dev-silent": "NODE_ENV=DEV-SILENT node --watch . --env-file=.env index.js",
+    "test": "jest --watch --detectOpenHandles",
+    "generate": "topsecret generate --key-file ./assets/encrypt.key",
+    "encrypt": "topsecret encrypt ./assets/server.json config-server.secure --key-file ./assets/encrypt.key && topsecret encrypt ./assets/tenants.json config-tenants.secure --key-file ./assets/encrypt.key",
+    "decrypt": "topsecret decrypt ./config-server.secure ./.config/server-decrypted.json --key-file ./.config/encrypt.key && topsecret decrypt ./config-tenants.secure ./.config/tenants-decrypted.json --key-file ./.config/encrypt.key"
+  },
+  "dependencies": {
+    "agenda": "^5.0.0",
+    "compression": "^1.7.5",
+    "confirm-env": "^1.0.1",
+    "connect-mongodb-session": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "express-handlebars": "^8.0.1",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "express-xss-sanitizer": "^2.0.0",
+    "helmet": "^8.0.0",
+    "hpp": "^0.2.3",
+    "html-minifier-terser": "^7.2.0",
+    "https": "^1.0.0",
+    "mongoose": "^8.11.0",
+    "moredate": "^0.0.4",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.16",
+    "topsecret": "^0.7.3",
+    "winston": "^3.17.0",
+    "winston-mongodb": "^6.0.0",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miketerry-org/kickstart-mvc.git"
+  },
+  "keywords": [
+    "controller",
+    "express",
+    "express-tenants",
+    "htmx",
+    "mongodb",
+    "mongoose",
+    "mvc",
+    "model",
+    "node",
+    "nodemailer",
+    "tailwind",
+    "view",
+    "web"
+  ],
+  "directories": {
+    "assets": "assets",
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "miketerry.org",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miketerry-org/kickstart-mvc/issues"
+  },
+  "homepage": "https://github.com/miketerry-org/kickstart-mvc#readme"
+}

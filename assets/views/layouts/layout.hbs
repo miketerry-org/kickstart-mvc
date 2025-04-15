@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{site_title}}</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- HTMX -->
+    <script src="/js/htmx.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+    <!-- Header -->
+    <header class="header py-6 px-4">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between md:justify-between"
+      >
+        <!-- Left Block: Logo and Navbar -->
+        <div class="left-block flex flex-col items-center md:items-start">
+          <!-- Logo -->
+          <div class="logo mb-4 md:mb-0">
+            <img src="/img/logo.svg" alt="Logo for {{site_title}}" class="w-16 h-16" />
+          </div>
+
+          <!-- Navbar -->
+          <nav class="navbar mt-4 md:mt-0">
+            <ul class="flex space-x-4 justify-center md:justify-start">
+              <li><a
+                  href="/"
+                  class="navbar-link"
+                  hx-get="/"
+                  hx-target="#main"
+                >Home</a></li>
+              <li><a
+                  href="/about"
+                  class="navbar-link"
+                  hx-get="/about"
+                  hx-target="#main"
+                >About</a></li>
+              <li><a
+                  href="/contact"
+                  class="navbar-link"
+                  hx-get="/contact"
+                  hx-target="#main"
+                >Contact</a></li>
+              <li><a
+                  href="/support"
+                  class="navbar-link"
+                  hx-get="/support"
+                  hx-target="#main"
+                >Support</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Middle Block: Project Title and Slogan -->
+        <div class="middle-block text-center md:text-center">
+          <h1 class="text-3xl font-bold">{{site_title}}</h1>
+          <h2 class="text-xl text-gray-600">{{site_slogan}}</h2>
+        </div>
+
+        <!-- Right Block: sign in/Sign out (conditionally rendered) -->
+        <div class="right-block mt-4 md:mt-0 md:ml-auto flex items-center">
+          <!-- sign in Link -->
+          <a
+            href="/sign-in"
+            class="login-logout-link bg-blue-500 text-white rounded-full px-6 py-2 text-lg hover:bg-blue-600"
+            hx-get="/sign-in"
+            hx-target="#main"
+          >Sign In</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content with updated ARIA live attributes -->
+    <main
+      id="main"
+      class="main py-6 px-4"
+      aria-live="assertive"
+      aria-relevant="additions"
+    >{{{body}}}</main>
+
+    <!-- Footer -->
+    <footer class="footer py-4 text-center text-sm text-gray-500">
+      <p>© Copyright {{site_copyright}}, {{site_owner}}</p>
+    </footer>
+
+<script src="/js/screenreader.js"</script>
+
+  </body>
+</html>
